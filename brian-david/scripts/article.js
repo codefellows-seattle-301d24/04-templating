@@ -17,14 +17,7 @@ Article.prototype.toHtml = function() {
   //       - Now "compile" your template with Handlebars.
   var sourceHTML = $('#article-template').html();
   var actualTemplate = Handlebars.compile(sourceHTML);
-  var anArticle = {
-    title: rawData.title,
-    author: `<a href="rawData.authorUrl">rawData.author</a>`,
-    pubdate: rawData.publishedOn,
-    body: rawData.body
-  }
 
-  }
   // REVIEW: If your template will use properties that aren't on the object yet, add them.
   //   Since your template can't hold any JS logic, we need to execute the logic here.
   //   The result is added to the object as a new property, which can then be referenced by key in the template.
@@ -33,7 +26,8 @@ Article.prototype.toHtml = function() {
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)'; // this is a "ternary operator"
 
   // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
-
+  var newRawHTML = actualTemplate(this);
+  $('main').append(newRawHTML);
 };
 
 rawData.sort(function(a,b) {
