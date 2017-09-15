@@ -24,13 +24,8 @@ Article.prototype.toHtml = function() {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)'; // this is a "ternary operator"
 
-  // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
-  var newBlog = {
-    title: this.title,
-    author: this.author,
-    publishedOn: this.publishedOn,
-    body: this.body,
-  };
+  // DONE: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
+  var newBlog = new Article(this);
   var newHTML = blogTemplate(newBlog);
   $('#articles').append(newHTML);
 };
