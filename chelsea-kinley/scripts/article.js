@@ -28,7 +28,6 @@ Article.prototype.toHtml = function() {
 
   // DONE: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
   var rawHtml = template(this);
-  console.log(this.publishStatus);
   $('#articles').append(rawHtml);
 
 };
