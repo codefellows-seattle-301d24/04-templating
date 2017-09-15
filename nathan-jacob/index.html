@@ -18,7 +18,7 @@
           <h1>{{ title }}</h1>
           <div class="byline">
             By <address><a href="">{{ author }}</a></address>
-            published <time pubdate datetime="2000-01-01">{{ publishedOn }}</time>
+            published <time pubdate datetime="2000-01-01">{{ publishedOn }}</time> {{{body}}}
           </div>
         </header>
         <section class="article-body"></section>
@@ -26,11 +26,8 @@
       </article>
 
     </script>
-
-
-
     <!--
-      DONE?: Add a script tag to hold the Handlebars template.
+      DONE: Add a script tag to hold the Handlebars template.
         - Be sure to give it a meaningful id attribute.
         - Move your old template structure to here. Remember that this template
           needs to have the same structure as the old one!
