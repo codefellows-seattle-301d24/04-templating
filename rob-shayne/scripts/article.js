@@ -17,8 +17,8 @@ Article.prototype.toHtml = function() {
   //       - Now "compile" your template with Handlebars.
 
   var templateHtml = $('#post-template').html();
+  $('.template').removeClass('template');
   var actualTemplate = Handlebars.compile(templateHtml);
-
 
   // REVIEW: If your template will use properties that aren't on the object yet, add them.
   //   Since your template can't hold any JS logic, we need to execute the logic here.
@@ -27,8 +27,8 @@ Article.prototype.toHtml = function() {
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)'; // this is a "ternary operator"
 
-  // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
-
+  // TODOne: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
+  return actualTemplate(this);
 };
 
 rawData.sort(function(a,b) {
