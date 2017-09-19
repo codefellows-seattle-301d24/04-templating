@@ -27,7 +27,7 @@ Article.prototype.toHtml = function() {
   // DONE: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
   var newBlog = new Article(this);
   var newHTML = blogTemplate(newBlog);
-  $('#articles').append(newHTML);
+  return newHTML;
 };
 
 rawData.sort(function(a,b) {
