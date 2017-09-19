@@ -27,9 +27,7 @@ Article.prototype.toHtml = function() {
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)'; // this is a "ternary operator"
 
   // DONE: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
-  var rawHtml = template(this);
-  $('#articles').append(rawHtml);
-
+  return template(this);
 };
 
 rawData.sort(function(a,b) {
